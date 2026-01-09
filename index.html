@@ -6,7 +6,7 @@
   <title>Koin Kaltara Di Hati (KDH)</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Tambahan CSS untuk memastikan banner responsif */
+    /* CSS untuk memastikan banner dan widget responsif */
     .banner-container {
       width: 100%;
       max-width: 1280px;
@@ -17,6 +17,17 @@
       width: 100%;
       height: auto;
       display: block;
+    }
+    .price-widget-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 20px auto;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+    .price-widget-container iframe {
+      border-radius: 12px;
+      border: 1px solid #ddd;
     }
   </style>
 </head>
@@ -32,6 +43,19 @@
 <div class="banner-container">
   <img src="Banner KDH.png" alt="Banner Koin Kaltara Di Hati">
 </div>
+
+<section class="price-widget-container">
+  <h2>Grafik & Harga Live KDH</h2>
+  <iframe 
+    id="dextools-widget" 
+    title="DEXTools Trading Chart" 
+    width="100%" 
+    height="500" 
+    src="https://www.dextools.io/widgets/en/bsc/pe-light/0xe6e6baebc2c05156ddf8ac3ee8060e0a127663ca?theme=light&chartType=2&chartResolution=60&drawingToolbars=false"
+    frameborder="0">
+    <iframe height="100%" width="100%" id="geckoterminal-embed" title="Embed BTC / BTCB" src="https://www.geckoterminal.com/bsc/pools/0xfb08088bf73a97fe0322df63b3cf5ebd8f0785d5?embed=1&info=1&swaps=1&grayscale=0&light_chart=0&chart_type=price&resolution=1h" frameborder="0" allow="clipboard-write" allowfullscreen></iframe>
+  </iframe>
+</section>
 
 <section class="hero">
   <h2>Teknologi Sosial untuk UMKM & Komunitas</h2>
@@ -95,6 +119,10 @@
   <p>
     Informasi token KDH dapat diverifikasi secara publik melalui BscScan.
     Seluruh aktivitas token tercatat secara transparan di jaringan blockchain.
+  </p>
+  <p>
+    <strong>Smart Contract:</strong> 
+    <code>0xe6e6baebc2c05156ddf8ac3ee8060e0a127663ca</code>
   </p>
 </section>
 
