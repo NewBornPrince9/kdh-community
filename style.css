@@ -1,125 +1,103 @@
+/* KDH STABLE STYLE */
+
 body {
-
   font-family: Arial, Helvetica, sans-serif;
-
   margin: 0;
-
+  padding: 0;
   background: #f7f9fc;
-
   color: #1a1a1a;
-
   line-height: 1.6;
-
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Memastikan body minimal setinggi layar */
 }
-
-
 
 .header {
-
   background: #0b3c5d;
-
   color: white;
-
   text-align: center;
-
-  padding: 30px 20px;
-
+  padding: 40px 20px;
 }
-
-
 
 .logo {
-
   width: 120px;
-
   margin-bottom: 10px;
-
 }
 
-
-
-.subtitle {
-
-  font-size: 14px;
-
-  opacity: 0.9;
-
+/* Container untuk Banner agar tidak menabrak elemen lain */
+.banner-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 20px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-
-
-.hero {
-
-  background: white;
-
-  padding: 30px;
-
-  margin: 20px;
-
+.banner-container img {
+  width: 100%;
+  height: auto;
   border-radius: 8px;
-
+  display: block;
 }
 
+/* Widget Harga */
+.price-widget-container {
+  max-width: 1280px;
+  margin: 20px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
 
-
-section {
-
+.price-widget-container iframe {
+  border-radius: 12px;
+  border: 1px solid #ddd;
   background: white;
+}
 
-  margin: 20px;
-
+/* Konten Section */
+section, .hero {
+  background: white;
+  margin: 20px auto;
+  max-width: 1240px;
   padding: 25px;
-
   border-radius: 8px;
-
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
-
-
 
 h2 {
-
   color: #0b3c5d;
-
+  margin-top: 0;
 }
-
-
 
 ul {
-
   padding-left: 20px;
-
 }
 
-
-
+/* Pastikan Link Telegram Mencolok */
 a {
-
   color: #0b7dda;
-
   text-decoration: none;
-
+  font-weight: bold;
 }
-
-
 
 a:hover {
-
   text-decoration: underline;
-
 }
 
-
-
+/* Footer diperbaiki agar selalu di bawah dan terlihat */
 .footer {
-
   background: #e9eef3;
-
-  padding: 20px;
-
-  font-size: 12px;
-
+  padding: 40px 20px;
+  font-size: 13px;
   text-align: center;
+  color: #444;
+  margin-top: auto; /* Mendorong footer ke paling bawah jika konten sedikit */
+  border-top: 1px solid #d1d8df;
+}
 
-  color: #555;
-
+/* Penyesuaian Mobile */
+@media (max-width: 768px) {
+  section, .hero, .banner-container, .price-widget-container {
+    margin: 15px;
+  }
 }
