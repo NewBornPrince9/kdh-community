@@ -1,125 +1,125 @@
-/* Palet Warna KDH: #00A859 (Hijau), #0072BC (Biru) */
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  font-family: Arial, Helvetica, sans-serif;
+
   margin: 0;
-  background: #f0f4f8; /* Background lebih cerah agar konten putih menonjol */
-  color: #2c3e50;
+
+  background: #f7f9fc;
+
+  color: #1a1a1a;
+
   line-height: 1.6;
+
 }
+
+
 
 .header {
-  background: linear-gradient(135deg, #0072BC 0%, #00A859 100%); /* Gradasi sesuai Logo */
+
+  background: #0b3c5d;
+
   color: white;
+
   text-align: center;
-  padding: 40px 20px;
+
+  padding: 30px 20px;
+
 }
+
+
 
 .logo {
-  width: 140px; /* Ukuran sedikit lebih besar */
-  height: auto;
-  margin-bottom: 15px;
-  filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));
+
+  width: 120px;
+
+  margin-bottom: 10px;
+
 }
+
+
 
 .subtitle {
-  font-size: 16px;
-  font-weight: 300;
-  letter-spacing: 1px;
+
+  font-size: 14px;
+
+  opacity: 0.9;
+
 }
 
-/* Optimasi Banner KDH */
-.banner-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: -30px auto 20px; /* Membuat banner agak naik sedikit menimpa header (modern look) */
-  padding: 0 15px;
-  box-sizing: border-box;
-}
 
-.banner-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
 
-/* Optimasi Widget Harga */
-.price-widget-container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 15px;
-  box-sizing: border-box;
-}
+.hero {
 
-.price-widget-container h2 {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-/* Kontainer Section Umum */
-section, .hero {
   background: white;
-  margin: 20px auto;
-  max-width: 1170px; /* Konsisten dengan lebar banner */
+
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+  margin: 20px;
+
+  border-radius: 8px;
+
 }
+
+
+
+section {
+
+  background: white;
+
+  margin: 20px;
+
+  padding: 25px;
+
+  border-radius: 8px;
+
+}
+
+
 
 h2 {
-  color: #0072BC;
-  border-bottom: 2px solid #00A859;
-  display: inline-block;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
+
+  color: #0b3c5d;
+
 }
+
+
 
 ul {
+
   padding-left: 20px;
+
 }
 
-li {
-  margin-bottom: 10px;
-}
+
 
 a {
-  color: #0072BC;
-  font-weight: bold;
-  transition: color 0.3s ease;
+
+  color: #0b7dda;
+
+  text-decoration: none;
+
 }
+
+
 
 a:hover {
-  color: #00A859;
-  text-decoration: none;
+
+  text-decoration: underline;
+
 }
+
+
 
 .footer {
-  background: #dfe6ed;
-  padding: 30px 20px;
-  font-size: 13px;
+
+  background: #e9eef3;
+
+  padding: 20px;
+
+  font-size: 12px;
+
   text-align: center;
-  color: #666;
-  margin-top: 40px;
-}
 
-/* RESPONSIVE DESIGN (HP) */
-@media (max-width: 768px) {
-  .header {
-    padding: 30px 15px;
-  }
-  
-  .banner-container {
-    margin-top: -10px; /* Mengurangi offset di layar kecil */
-  }
+  color: #555;
 
-  section, .hero {
-    margin: 15px;
-    padding: 20px;
-  }
-
-  iframe {
-    height: 400px; /* Widget sedikit lebih pendek di HP agar tidak terlalu panjang scroll-nya */
-  }
 }
