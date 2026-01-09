@@ -1,36 +1,40 @@
-/* KDH STABLE STYLE */
+/* KDH REPAIR - FINAL STRUCTURE */
+
+* {
+  box-sizing: border-box; /* Memastikan padding tidak merusak lebar kotak */
+}
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: #f7f9fc;
   color: #1a1a1a;
   line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Memastikan body minimal setinggi layar */
+  width: 100%;
 }
 
+/* Header */
 .header {
   background: #0b3c5d;
   color: white;
   text-align: center;
   padding: 40px 20px;
+  width: 100%;
 }
 
 .logo {
   width: 120px;
+  height: auto;
   margin-bottom: 10px;
 }
 
-/* Container untuk Banner agar tidak menabrak elemen lain */
+/* Banner Container */
 .banner-container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 800px; /* Disesuaikan agar tidak terlalu lebar di desktop */
   margin: 20px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
+  padding: 0 15px;
 }
 
 .banner-container img {
@@ -40,28 +44,32 @@ body {
   display: block;
 }
 
-/* Widget Harga */
+/* Widget Container */
 .price-widget-container {
-  max-width: 1280px;
+  width: 100%;
+  max-width: 800px;
   margin: 20px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
+  padding: 0 15px;
 }
 
 .price-widget-container iframe {
-  border-radius: 12px;
+  width: 100%;
+  height: 500px; /* Memberi ruang tinggi yang pasti */
   border: 1px solid #ddd;
-  background: white;
+  border-radius: 8px;
 }
 
-/* Konten Section */
+/* Section & Hero */
 section, .hero {
   background: white;
   margin: 20px auto;
-  max-width: 1240px;
+  width: calc(100% - 30px); /* Margin kiri kanan */
+  max-width: 800px;
   padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: block; /* Memastikan elemen turun ke bawah */
+  overflow: hidden; /* Mencegah konten meluber */
 }
 
 h2 {
@@ -69,35 +77,47 @@ h2 {
   margin-top: 0;
 }
 
+/* Link & List */
 ul {
   padding-left: 20px;
 }
 
-/* Pastikan Link Telegram Mencolok */
 a {
   color: #0b7dda;
   text-decoration: none;
   font-weight: bold;
+  word-wrap: break-word; /* Mencegah link Telegram yang panjang merusak layout */
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-/* Footer diperbaiki agar selalu di bawah dan terlihat */
+/* Footer - Pasti Terlihat */
 .footer {
   background: #e9eef3;
-  padding: 40px 20px;
-  font-size: 13px;
+  padding: 50px 20px;
+  margin-top: 40px;
   text-align: center;
-  color: #444;
-  margin-top: auto; /* Mendorong footer ke paling bawah jika konten sedikit */
   border-top: 1px solid #d1d8df;
+  width: 100%;
+  display: block;
+  clear: both;
+}
+
+.footer p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #555;
 }
 
 /* Penyesuaian Mobile */
-@media (max-width: 768px) {
-  section, .hero, .banner-container, .price-widget-container {
-    margin: 15px;
+@media (max-width: 600px) {
+  iframe {
+    height: 400px;
+  }
+  .header {
+    padding: 30px 10px;
   }
 }
