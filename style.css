@@ -1,8 +1,4 @@
-/* KDH REPAIR - FINAL STRUCTURE */
-
-* {
-  box-sizing: border-box; /* Memastikan padding tidak merusak lebar kotak */
-}
+/* KDH RECOVERY STYLE - SIMPLE & WIDE */
 
 body {
   font-family: Arial, sans-serif;
@@ -11,16 +7,13 @@ body {
   background: #f7f9fc;
   color: #1a1a1a;
   line-height: 1.6;
-  width: 100%;
 }
 
-/* Header */
 .header {
   background: #0b3c5d;
   color: white;
   text-align: center;
   padding: 40px 20px;
-  width: 100%;
 }
 
 .logo {
@@ -29,12 +22,11 @@ body {
   margin-bottom: 10px;
 }
 
-/* Banner Container */
+/* Banner: Dibuat lebar dan proporsional */
 .banner-container {
-  width: 100%;
-  max-width: 800px; /* Disesuaikan agar tidak terlalu lebar di desktop */
+  width: 95%;
+  max-width: 1200px;
   margin: 20px auto;
-  padding: 0 15px;
 }
 
 .banner-container img {
@@ -44,32 +36,31 @@ body {
   display: block;
 }
 
-/* Widget Container */
+/* Widget Harga: Dibuat lebar agar grafik terbaca */
 .price-widget-container {
-  width: 100%;
-  max-width: 800px;
+  width: 95%;
+  max-width: 1200px;  
   margin: 20px auto;
-  padding: 0 15px;
 }
 
 .price-widget-container iframe {
   width: 100%;
-  height: 500px; /* Memberi ruang tinggi yang pasti */
+  height: 600px; /* Tinggi ditambah agar grafik jelas */
   border: 1px solid #ddd;
   border-radius: 8px;
+  background: white;
 }
 
-/* Section & Hero */
+/* Bagian Konten: Lebar otomatis mengikuti layar */
 section, .hero {
   background: white;
   margin: 20px auto;
-  width: calc(100% - 30px); /* Margin kiri kanan */
-  max-width: 800px;
-  padding: 25px;
+  width: 95%;
+  max-width: 1200px;
+  padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  display: block; /* Memastikan elemen turun ke bawah */
-  overflow: hidden; /* Mencegah konten meluber */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-sizing: border-box;
 }
 
 h2 {
@@ -77,47 +68,41 @@ h2 {
   margin-top: 0;
 }
 
-/* Link & List */
+/* Link Telegram & List */
 ul {
   padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
 }
 
 a {
   color: #0b7dda;
   text-decoration: none;
   font-weight: bold;
-  word-wrap: break-word; /* Mencegah link Telegram yang panjang merusak layout */
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-/* Footer - Pasti Terlihat */
+/* Footer: Pasti muncul di paling bawah */
 .footer {
   background: #e9eef3;
   padding: 50px 20px;
-  margin-top: 40px;
+  margin-top: 50px;
   text-align: center;
-  border-top: 1px solid #d1d8df;
-  width: 100%;
-  display: block;
+  border-top: 1px solid #ccc;
   clear: both;
 }
 
-.footer p {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 13px;
-  color: #555;
-}
-
-/* Penyesuaian Mobile */
-@media (max-width: 600px) {
-  iframe {
-    height: 400px;
+/* Perbaikan untuk tampilan HP */
+@media (max-width: 768px) {
+  .price-widget-container iframe {
+    height: 450px;
   }
-  .header {
-    padding: 30px 10px;
+  section, .hero {
+    padding: 20px;
   }
 }
