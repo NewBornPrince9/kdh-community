@@ -114,6 +114,81 @@
     Baca selengkapnya di <a href="disclaimer.html">Halaman Disclaimer</a>.
   </p>
 </footer>
+<style>
+  .faq-container {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  .faq-question {
+    background-color: #f1f8f4; /* Hijau muda sesuai tema KDH */
+    color: #2c5f2d;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  .faq-answer {
+    padding: 0 15px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
+  .faq-answer p {
+    padding: 15px 0;
+    line-height: 1.6;
+    color: #333;
+  }
+</style>
 
+<div class="faq-container">
+  <h2 style="text-align:center; color:#2c5f2d;">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">Apakah Koin Kaltara Di Hati (KDH) memiliki izin resmi?</button>
+    <div class="faq-answer">
+      <p>Ya. KDH telah resmi terdaftar di Direktorat Jenderal Kekayaan Intelektual (DJKI) Kemenkumham RI dengan <strong>Kode Billing: 820260110458426</strong>. Perlindungan hukum kami mencakup <strong>Kelas 9</strong> untuk teknologi perangkat lunak dan <strong>Kelas 36</strong> untuk jasa informasi keuangan digital.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Bagaimana KDH membantu UMKM di Kalimantan Utara?</button>
+    <div class="faq-answer">
+      <p>KDH berfungsi sebagai jembatan ekonomi digital yang memudahkan pelaku UMKM dalam akses pendanaan dan pendataan berbasis teknologi blockchain yang transparan.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Apa keunggulan platform KDH bagi Pemerintah Daerah?</button>
+    <div class="faq-answer">
+      <p>Platform ini memungkinkan distribusi anggaran atau bantuan sosial dilakukan secara tepat sasaran, <i>real-time</i>, dan tercatat secara akuntabel dalam sistem buku besar digital.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  var acc = document.getElementsByClassName("faq-question");
+  for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+</script>
 </body>
 </html>
