@@ -1,51 +1,197 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koin Kaltara Di Hati (KDH) - Komunitas & UMKM</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
-    <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: #f9fbff; color: #333; }
-        
-        /* Header Biru Sesuai Website */
-        .hero-section { background-color: #00569d; color: white; padding: 40px 20px; text-align: center; }
-        .hero-logo-small { width: 60px; margin-bottom: 10px; }
-        .hero-title { font-size: 28px; font-weight: bold; margin: 10px 0; }
-        .hero-subtitle { font-size: 14px; opacity: 0.9; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Koin Kaltara Di Hati (KDH) - Official Website</title>
+  <link rel="icon" type="image/svg+xml" href="kdh-icon-circle.svg">
+  <style>
+    /* CSS MANDIRI - MEMASTIKAN TAMPILAN LEBAR & SEMUA LINK TERLIHAT */
+    * { box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin: 0; padding: 0; background: #f4f7f6; color: #333; line-height: 1.6; 
+    }
+    
+    .header { 
+      background: linear-gradient(135deg, #0b3c5d 0%, #0072bc 100%); 
+      color: white; text-align: center; padding: 50px 20px; 
+    }
+    .logo { width: 150px; height: auto; margin-bottom: 15px; }
 
-        /* Container Utama */
-        .container { max-width: 1100px; margin: -50px auto 50px; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+    /* Navigasi Bahasa & Dokumen Cepat */
+    .nav-bar { background: #fff; padding: 10px; text-align: center; border-bottom: 1px solid #ddd; }
+    .nav-bar a { margin: 0 15px; text-decoration: none; color: #0b3c5d; font-weight: bold; font-size: 14px; }
 
-        /* Card Style */
-        .card { background: white; border-radius: 25px; box-shadow: 0 15px 45px rgba(0,0,0,0.1); padding: 35px; width: 350px; }
-        .structure-card { background: white; border-radius: 25px; box-shadow: 0 15px 45px rgba(0,0,0,0.1); padding: 35px; flex: 1; min-width: 400px; }
+    .container { width: 95%; max-width: 1100px; margin: 20px auto; }
+    
+    .banner-img { 
+      width: 100%; height: auto; border-radius: 12px; display: block; 
+      margin-bottom: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+    }
+    
+    section { 
+      background: white; padding: 35px; border-radius: 12px; 
+      margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+    }
+    
+    h2 { color: #0b3c5d; border-bottom: 3px solid #00a859; padding-bottom: 10px; margin-top: 0; }
+    
+    /* Widget Grafik Harga */
+    .chart-container iframe { 
+      width: 100%; height: 550px; border: 1px solid #eee; border-radius: 12px; background: #fff; 
+    }
+    
+    /* Area Tombol Link Penting */
+    .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+    .btn-action { 
+      display: block; text-align: center; padding: 15px; background: #0b3c5d; color: white !important; 
+      text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s;
+    }
+    .btn-action:hover { background: #00a859; transform: translateY(-3px); }
+    .btn-secondary { background: #555; }
 
-        /* Wallet Elements */
-        .balance-val { font-size: 38px; font-weight: bold; color: #1a237e; margin: 15px 0; }
-        .addr-box { background: #f1f4f9; padding: 12px; border-radius: 10px; font-size: 10px; font-family: monospace; word-break: break-all; color: #666; margin-bottom: 20px; }
-        .btn { width: 100%; padding: 15px; border-radius: 12px; border: none; font-weight: bold; cursor: pointer; margin-bottom: 10px; transition: 0.3s; font-size: 15px; }
-        .btn-green { background: #28a745; color: white; }
-        .btn-blue { background: #007bff; color: white; }
-        .btn-dark { background: #1a237e; color: white; }
-
-        /* Struktur Direksi */
-        .section-header { color: #1a237e; font-size: 22px; font-weight: bold; border-bottom: 3px solid #00569d; display: inline-block; padding-bottom: 5px; margin-bottom: 30px; }
-        .member { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; text-align: left; padding-bottom: 15px; border-bottom: 1px solid #eee; }
-        .member:last-child { border-bottom: none; }
-        .profile-img { width: 75px; height: 75px; border-radius: 15px; object-fit: cover; border: 2px solid #00569d; }
-        .m-info .role { font-size: 10px; color: #00569d; font-weight: bold; text-transform: uppercase; margin: 0; }
-        .m-info .name { font-size: 18px; font-weight: bold; color: #333; margin: 3px 0; }
-        .m-info .desc { font-size: 11px; color: #777; line-height: 1.4; margin: 0; }
-    </style>
+    .footer { background: #0b3c5d; color: white; padding: 50px 20px; text-align: center; margin-top: 50px; }
+    .footer a { color: #00a859; text-decoration: none; }
+    .footer p { font-size: 13px; max-width: 900px; margin: 15px auto; opacity: 0.9; }
+  </style>
 </head>
 <body>
 
-    <div class="hero-section">
-        <img src="https://raw.githubusercontent.com/NewBornPrince9/Kaltara-Di-Hati-KDH/main/logo_kdh.png" class="hero-logo-small">
-        <div class="hero-title">Koin Kaltara Di Hati (KDH)</div>
-        <div class="hero-subtitle">Inisiatif Token Komunitas & Pemberdayaan UMKM Kalimantan Utara</div>
+<div class="nav-bar">
+  <a href="index.html">🇮🇩 INDONESIA</a>
+  <a href="en.html">🇺🇸 ENGLISH (EN)</a>
+  <a href="visi.html" style="color: #f39c12; font-weight: bold;">🚀 VISI STRATEGIS</a>
+  <a href="airdrop.html" style="color: #00a859; font-weight: bold;">🎁 AIRDROP</a>
+</div>
+
+<header class="header">
+  <img src="kdh-logo.svg" alt="Logo KDH" class="logo"/>
+  <h1>Koin Kaltara Di Hati (KDH)</h1>
+  <p>Inisiatif Token Komunitas & Pemberdayaan UMKM Kalimantan Utara</p>
+</header>
+
+<div class="container">
+  <img src="Banner KDH.png" alt="Banner KDH" class="banner-img">
+
+  <section class="chart-container">
+    <h2>Grafik Pergerakan Harga KDH</h2>
+    <p>Data real-time token KDH di jaringan BSC (Binance Smart Chain).</p>
+    <iframe height="100%" width="100%" id="geckoterminal-embed" title="Embed KDH / WBNB" src="https://www.geckoterminal.com/bsc/pools/0xe6e6baebc2c05156ddf8ac3ee8060e0a127663ca?embed=1&info=1&swaps=1&grayscale=0&light_chart=0&chart_type=price&resolution=15m" frameborder="0" allow="clipboard-write" allowfullscreen></iframe>
+    <iframe src="https://www.dextools.io/widgets/en/bsc/pe-light/0xe6e6baebc2c05156ddf8ac3ee8060e0a127663ca?theme=light&chartType=2&chartResolution=60"></iframe>
+  </section>
+
+  <section>
+    <h2>Dokumentasi & Komunitas</h2>
+    <p>Akses seluruh dokumen resmi dan kanal komunitas kami di bawah ini:</p>
+    <div class="link-grid">
+      <a href="KDH_Whitepaper_ID_EN_FINAL.pdf" target="_blank" class="btn-action">Download Whitepaper</a>
+      <a href="https://t.me/KDHCommunity" target="_blank" class="btn-action">Grup Telegram Resmi</a>
+      <a href="https://bscscan.com/token/0xe6e6baebc2c05156ddf8ac3ee8060e0a127663ca" target="_blank" class="btn-action">BscScan (Smart Contract)</a>
+      <a href="LICENSE" target="_blank" class="btn-action btn-secondary">Lisensi Proyek (MIT)</a>
     </div>
+  </section>
+
+  <section>
+    <h2>Tentang Proyek KDH</h2>
+    <p>
+      Koin Kaltara Di Hati (KDH) adalah inisiatif berbasis komunitas yang bertujuan untuk 
+      membangun ekosistem digital bagi pelaku UMKM di Kalimantan Utara. Melalui transparansi 
+      teknologi blockchain, KDH hadir sebagai sarana edukasi dan kolaborasi sosial.
+    </p>
+    <p><i>Silakan baca <strong>README.md</strong> di repositori kami untuk detail teknis lebih lanjut.</i></p>
+  </section>
+</div>
+
+<footer class="footer">
+  <p>
+    <strong>Peringatan Penting (Disclaimer):</strong><br>
+    KDH bukan alat pembayaran sah, bukan produk investasi, dan tidak ditujukan sebagai instrumen perdagangan spekulatif. 
+    Token ini adalah token utilitas komunitas. Segala partisipasi bersifat sukarela.
+  </p>
+  <p>
+    &copy; 2025 KDH Community. Berlisensi di bawah <a href="LICENSE">MIT License</a>. 
+    Baca selengkapnya di <a href="disclaimer.html">Halaman Disclaimer</a>.
+  </p>
+</footer>
+<style>
+  .faq-container {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  .faq-question {
+    background-color: #f1f8f4; /* Hijau muda sesuai tema KDH */
+    color: #2c5f2d;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  .faq-answer {
+    padding: 0 15px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
+  .faq-answer p {
+    padding: 15px 0;
+    line-height: 1.6;
+    color: #333;
+  }
+</style>
+
+<div class="faq-container">
+  <h2 style="text-align:center; color:#2c5f2d;">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">Apakah Koin Kaltara Di Hati (KDH) memiliki izin resmi?</button>
+    <div class="faq-answer">
+      <p>Ya. KDH telah resmi terdaftar di Direktorat Jenderal Kekayaan Intelektual (DJKI) Kemenkumham RI dengan <strong>Kode Billing: 820260110458426</strong>. Perlindungan hukum kami mencakup <strong>Kelas 9</strong> untuk teknologi perangkat lunak dan <strong>Kelas 36</strong> untuk jasa informasi keuangan digital.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Bagaimana KDH membantu UMKM di Kalimantan Utara?</button>
+    <div class="faq-answer">
+      <p>KDH berfungsi sebagai jembatan ekonomi digital yang memudahkan pelaku UMKM dalam akses pendanaan dan pendataan berbasis teknologi blockchain yang transparan.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Apa keunggulan platform KDH bagi Pemerintah Daerah?</button>
+    <div class="faq-answer">
+      <p>Platform ini memungkinkan distribusi anggaran atau bantuan sosial dilakukan secara tepat sasaran, <i>real-time</i>, dan tercatat secara akuntabel dalam sistem buku besar digital.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  var acc = document.getElementsByClassName("faq-question");
+  for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+</script>
+</body>
+</html>
 
     <div class="container">
         <div class="card">
