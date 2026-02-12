@@ -6,7 +6,7 @@
   <title>Koin Kaltara Di Hati (KDH) - Official Website</title>
   <link rel="icon" type="image/svg+xml" href="kdh-icon-circle.svg">
   <style>
-    /* CSS MANDIRI - OPTIMAL UNTUK PRESENTASI */
+    /* CSS MANDIRI - LENGKAP & KLASIK */
     * { box-sizing: border-box; }
     body { 
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -36,12 +36,14 @@
     
     h2 { color: #0b3c5d; border-bottom: 3px solid #00a859; padding-bottom: 10px; margin-top: 0; }
     
+    /* Tombol & Grid */
     .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
     .btn-action { 
       display: block; text-align: center; padding: 15px; background: #0b3c5d; color: white !important; 
       text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s;
     }
     .btn-action:hover { background: #00a859; transform: translateY(-3px); }
+    .btn-secondary { background: #555; }
 
     /* Profile Members */
     .member { display: flex; align-items: center; margin-bottom: 20px; padding: 15px; border-bottom: 1px solid #eee; }
@@ -62,8 +64,9 @@
 <div class="nav-bar">
   <div id="clock" style="font-family: 'Courier New', Courier, monospace; font-size: 18px; color: #f39c12; font-weight: bold; margin-bottom: 5px;"></div>
   <a href="index.html">🇮🇩 INDONESIA</a>
-  <a href="visi.html" style="color: #f39c12;">🚀 VISI STRATEGIS</a>
-  <a href="airdrop.html" style="color: #00a859;">🎁 AIRDROP</a>
+  <a href="en.html">🇺🇸 ENGLISH (EN)</a>
+  <a href="visi.html" style="color: #f39c12; font-weight: bold;">🚀 VISI STRATEGIS</a>
+  <a href="airdrop.html" style="color: #00a859; font-weight: bold;">🎁 AIRDROP</a>
 </div>
 
 <header class="header">
@@ -80,6 +83,17 @@
     <p>Panduan praktis menggunakan MetaMask untuk warga Kalimantan Utara.</p>
     <div style="max-width: 700px; margin: 20px auto; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.2);">
       <iframe width="100%" height="380" src="https://www.youtube.com/embed/nnPFCxVz-_8" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section>
+    <h2>Dokumentasi & Komunitas</h2>
+    <p>Akses seluruh dokumen resmi dan kanal komunitas kami di bawah ini:</p>
+    <div class="link-grid">
+      <a href="KDH_Whitepaper_ID_EN_FINAL.pdf" target="_blank" class="btn-action">Download Whitepaper</a>
+      <a href="https://t.me/KDHCommunity" target="_blank" class="btn-action">Grup Telegram Resmi</a>
+      <a href="https://bscscan.com/token/0xe6e6baebc2c05156ddf8ac3ee8060e0a127663ca" target="_blank" class="btn-action">BscScan (Smart Contract)</a>
+      <a href="LICENSE" target="_blank" class="btn-action btn-secondary">Lisensi Proyek (MIT)</a>
     </div>
   </section>
 
